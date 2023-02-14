@@ -23,8 +23,8 @@ from typing import (
     Generic,
 )
 
-from boto3.dynamodb.conditions import Key
-from pymongo.collection import Collection
+# from boto3.dynamodb.conditions import Key
+# from pymongo.collection import Collection
 
 import rasa.core.utils as core_utils
 import rasa.shared.utils.cli
@@ -52,7 +52,7 @@ import sqlalchemy as sa
 from sqlalchemy.ext.declarative import declarative_base, DeclarativeMeta
 
 if TYPE_CHECKING:
-    import boto3.resources.factory.dynamodb.Table
+    # import boto3.resources.factory.dynamodb.Table
     from sqlalchemy.engine.url import URL
     from sqlalchemy.engine.base import Engine
     from sqlalchemy.orm import Session, Query
