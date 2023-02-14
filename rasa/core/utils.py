@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import json
 import logging
 import os
@@ -13,7 +15,7 @@ from rasa.shared.constants import DEFAULT_ENDPOINTS_PATH, TCP_PROTOCOL
 
 from rasa.core.lock_store import LockStore, RedisLockStore, InMemoryLockStore
 from rasa.utils.endpoints import EndpointConfig, read_endpoint_config
-from sanic import Sanic
+# from sanic import Sanic
 from socket import SOCK_DGRAM, SOCK_STREAM
 import rasa.cli.utils as cli_utils
 

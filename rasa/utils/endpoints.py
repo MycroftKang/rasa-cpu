@@ -1,10 +1,12 @@
+from __future__ import annotations
+
 import ssl
 
 import aiohttp
 import logging
 import os
 from aiohttp.client_exceptions import ContentTypeError
-from sanic.request import Request
+# from sanic.request import Request
 from typing import Any, Optional, Text, Dict
 
 from rasa.shared.exceptions import FileNotFoundException
