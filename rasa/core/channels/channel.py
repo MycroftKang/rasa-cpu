@@ -1,9 +1,10 @@
+from __future__ import annotations
 import json
 import logging
 import uuid
-import jwt
-from sanic import Sanic, Blueprint
-from sanic.request import Request
+# import jwt
+# from sanic import Sanic, Blueprint
+# from sanic.request import Request
 from typing import (
     Text,
     List,
