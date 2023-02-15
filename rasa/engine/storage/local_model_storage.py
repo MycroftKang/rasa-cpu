@@ -8,7 +8,7 @@ import uuid
 from contextlib import contextmanager
 from datetime import datetime
 from pathlib import Path
-from tarsafe import TarSafe
+import tarfile
 from typing import Generator, Optional, Text, Tuple, Union
 
 import rasa.utils.common
@@ -115,7 +115,7 @@ class LocalModelStorage(ModelStorage):
     def _extract_archive_to_directory(
         model_archive_path: Union[Text, Path], temporary_directory: Path
     ) -> None:
-        with TarSafe.open(model_archive_path, mode="r:gz") as tar:
+        with tarfile.open(model_archive_path, mode="r:gz") as tar:
             if sys.platform == "win32":
                 # on Windows by default there is a restriction on long
                 # path names; using the prefix below allows to bypass
@@ -213,7 +213,7 @@ class LocalModelStorage(ModelStorage):
             if not model_archive_path.parent.exists():
                 model_archive_path.parent.mkdir(parents=True)
 
-            with TarSafe.open(model_archive_path, "w:gz") as tar:
+            with tarfile.open(model_archive_path, "w:gz") as tar:
                 tar.add(temporary_directory, arcname="")
 
         logger.debug(f"Model package created in path '{model_archive_path}'.")
